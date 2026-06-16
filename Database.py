@@ -4,7 +4,7 @@ def connect_db():
     conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="yourpassword",  # replace with your MySQL password
+        password="rootroot",  
         database="file_encryption_db"
     )
     return conn
