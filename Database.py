@@ -1,3 +1,13 @@
+# Feature: MySQL Database Logging System
+# Branch: feature/database-logging
+# Developer: Rabin Adhikari
+
+
+
+
+
+
+
 import mysql.connector
 
 def connect_db():
