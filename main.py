@@ -6,6 +6,11 @@ import os
 
 FONT = ("Consolas", 12)
 TITLE_FONT = ("Consolas", 16, "bold")
+BG_COLOR = "#95B8DE"
+GOLD = "#024310"
+DARK_GOLD = "#024310"
+TEXT_COLOR = "#2B2B2B"
+ENTRY_BG = "#ADACE8"
 
 
 def browse_file():
@@ -56,25 +61,26 @@ def logs_action():
 root = Tk()
 root.title("File Encryption System")
 root.geometry("450x340")
+root.configure(bg=BG_COLOR)
 
-Label(root, text="File Encryption System", font=TITLE_FONT).pack(pady=15)
+Label(root, text="File Encryption System", font=TITLE_FONT, bg=BG_COLOR, fg=DARK_GOLD).pack(pady=15)
 
-Label(root, text="File path:", font=FONT).pack()
-file_frame = Frame(root)
+Label(root, text="File path:", font=FONT, bg=BG_COLOR, fg=TEXT_COLOR).pack()
+file_frame = Frame(root, bg=BG_COLOR)
 file_frame.pack(pady=5)
-file_entry = Entry(file_frame, width=32, font=FONT)
+file_entry = Entry(file_frame, width=32, font=FONT, bg=ENTRY_BG, fg=TEXT_COLOR)
 file_entry.pack(side=LEFT, padx=5)
-Button(file_frame, text="Browse", font=FONT, command=browse_file).pack(side=LEFT)
+Button(file_frame, text="Browse", font=FONT, command=browse_file, bg=GOLD, fg=TEXT_COLOR).pack(side=LEFT)
 
-Label(root, text="Password:", font=FONT).pack(pady=(10, 0))
-password_entry = Entry(root, show="*", font=FONT, width=25)
+Label(root, text="Password:", font=FONT, bg=BG_COLOR, fg=TEXT_COLOR).pack(pady=(10, 0))
+password_entry = Entry(root, show="*", font=FONT, width=25, bg=ENTRY_BG, fg=TEXT_COLOR)
 password_entry.pack(pady=5)
 
-btn_frame = Frame(root)
+btn_frame = Frame(root, bg=BG_COLOR)
 btn_frame.pack(pady=20)
-Button(btn_frame, text="Encrypt", font=FONT, width=10, command=encrypt_action).grid(row=0, column=0, padx=5)
-Button(btn_frame, text="Decrypt", font=FONT, width=10, command=decrypt_action).grid(row=0, column=1, padx=5)
-Button(btn_frame, text="Logs", font=FONT, width=10, command=logs_action).grid(row=0, column=2, padx=5)
-Button(btn_frame, text="Exit", font=FONT, width=32, command=root.destroy).grid(row=1, column=0, columnspan=3, pady=10)
+Button(btn_frame, text="Encrypt", font=FONT, width=10, command=encrypt_action, bg=GOLD, fg=TEXT_COLOR).grid(row=0, column=0, padx=5)
+Button(btn_frame, text="Decrypt", font=FONT, width=10, command=decrypt_action, bg=GOLD, fg=TEXT_COLOR).grid(row=0, column=1, padx=5)
+Button(btn_frame, text="Logs", font=FONT, width=10, command=logs_action, bg=GOLD, fg=TEXT_COLOR).grid(row=0, column=2, padx=5)
+Button(btn_frame, text="Exit", font=FONT, width=32, command=root.destroy, bg=DARK_GOLD, fg=BG_COLOR).grid(row=1, column=0, columnspan=3, pady=10)
 
 root.mainloop()
